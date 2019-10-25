@@ -37,10 +37,10 @@ Thank you!
 Interactions between people in a conference can get easily hampered: conferences are often hosted in an unknown place and the audience comes from all around the world. This means that, most times, it is hard to meet people who have similar interests and network with them without trying to talk to other people and then coming to the conclusion you have nothing in common with them. On the other hand, it is not uncommon to carry several copies of one's CV so as to deliver them to potential employees. Because of these problems, Conference Connect was born, a revolutionary smart badge that locates people with similar interests and connects people with businesses!
 
 ## Product Vision
-Improve interactions between conference goers using the power of technology by offering them a networking platform where they can find people with similar interests and share contacts as well as CVs using a [micro:bit](https://microbit.org) powered smart badge.
+Improve interactions between conference goers using the power of technology by offering them a networking platform where they can find people with similar interests and exchange information using a [micro:bit](https://microbit.org) powered smart badge.
 
 ## Elevator Pitch
-
+This module allows for easy communication between participants in a conference and finding people with similar interests around each of them by using a small and lightweight device. 
 
 ## Requirements
 This module requires each person participating in the conference to use a micro:bit 
