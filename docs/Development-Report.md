@@ -66,6 +66,17 @@ Briefly describe each use case mentioning the following:
 * **Alternative Flows and Exceptions**. Document other, legitimate usage scenarios that can take place within this use case, stating any differences in the sequence of steps that take place. In addition, describe any anticipated error conditions that could occur during execution of the use case, and define how the system is to respond to those conditions. 
 
 ### User stories
+### Must haves
+* As an attendee, I want to be able to use the badge without having to download an app so that I don't have to reserve space on my phone for it. (Effort: L)
+* As an attendee, I want to easily send my CV to potential employers. (Effort: S)
+* As an attendee, I want to easily exchange contact information with other attendees. (Effort: S)
+
+### Should haves
+* As an attendee, I want my badge to notify me every time someone with similar interests to mine is near me so that I can have an easier time networking.
+* As a lecturer, I want to survey my audience so that I can easily collect relevant information to my area or important to me.
+* As a business, I want to know who is interested in my activities as well as information on who is looking for a job with me.
+
+
 This section will contain the requirements of the product described as **user stories**, organized in a global **user story map** with **user roles** or **themes**.
 
 For each theme, or role, you may add a small description here. User stories should be detailed in the tool you decided to use for project management (e.g. trello or github projects).
