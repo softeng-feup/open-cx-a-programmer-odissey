@@ -23,7 +23,7 @@ You can find here detailed information about the module, from a high-level visio
 * Change management
   * [Issues at Github]()
 * Project management
-  * Tasks management tool 
+  * [Board at Github Projects](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1) 
 
 So far, contributions are exclusively made by the initial team, but we hope to open them to the community, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
 
