@@ -49,8 +49,8 @@ In this section, you should describe all kinds of requirements for your module: 
 
 Start by contextualizing your module, describing the main concepts, terms, roles, scope and boundaries of the application domain addressed by the project.
 
-### Use case diagram 
-![Use cases](https://raw.githubusercontent.com/softeng-feup/open-cx-a-programmer-odissey/master/docs/Screenshot_2019-10-11_10-34-30.png?token=AAQQBJC6YQNNTLSXHRGVQQK5WKVTI)
+### Use case diagram
+![Use cases](https://user-images.githubusercontent.com/2162852/67559084-2099d280-f710-11e9-9bbb-42d1b8b58b02.png)
 
 Create a use-case diagram in UML with all high-level use cases possibly addressed by your module.
 
