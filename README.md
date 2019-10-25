@@ -7,3 +7,5 @@ TODO:
 - [ ] Mockups
 
 Click [here](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Development-Report.md) to access the report. 
+
+Access our project board [here](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1).
