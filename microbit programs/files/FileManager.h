@@ -11,7 +11,7 @@ class FileManager{
     * Reads unsigned int with 'key' and saves it to 'target'
     * Returns -1 if key was not found, 0 on success
     */
-    int readUnsigned(const char *key, unsigned int &target);
+    int read(const char *key, int &target);
     
-    int writeUnsigned(const char *key, const unsigned int &value);
+    int write(const char *key, const int &value);
 };

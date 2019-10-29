@@ -4,7 +4,7 @@ FileManager::FileManager(MicroBit &uBit){
     this->uBit = &uBit;    
 }
 
-int FileManager::readUnsigned(const char *key, unsigned int &target){
+int FileManager::read(const char *key, int &target){
     if (key == NULL)
         return -1;
     
@@ -12,15 +12,15 @@ int FileManager::readUnsigned(const char *key, unsigned int &target){
     if (valuePair == NULL)
         return -1;
     
-    memcpy(&target, valuePair->value, sizeof(unsigned int));
+    memcpy(&target, valuePair->value, sizeof(int));
     delete valuePair;
     return 0;
 }
 
-int FileManager::writeUnsigned(const char *key, const unsigned int &value){
+int FileManager::write(const char *key, const int &value){
     if (key == NULL)
         return -1;
         
-    uBit->storage.put(key, (uint8_t *) &value, sizeof(unsigned int));
+    uBit->storage.put(key, (uint8_t *) &value, sizeof(int));
     return 0;
 }

@@ -28,18 +28,17 @@ DEALINGS IN THE SOFTWARE.
 
 MicroBit uBit;
 
-
 int main()
 {
     // Initialise the micro:bit runtime.
     uBit.init();
-    unsigned int ID = 0;
+    int ID = 0;
     
     FileManager files(uBit);
     
-    files.writeUnsigned("ID", 4);
+    files.write("ID", 4);
     
-    if (files.readUnsigned("ID", ID) == -1)
+    if (files.read("ID", ID) == -1)
         uBit.display.scroll("ID not found");    
     else {
         ManagedString idString((int)ID);
