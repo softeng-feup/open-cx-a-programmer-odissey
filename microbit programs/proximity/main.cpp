@@ -1,57 +1,46 @@
+#include "ButtonManager.h"
+#include "Globals.h"
+#include "RadioManager.h"
 #include "misc.h"
 
-#define checkMark 0b0000000001000101010001000
-#define xMark 0b1000101010001000101010001
-
 MicroBit uBit;
+enum states uBitState = ST_PROXIMITY;
+uint8_t radioGroup = 0;
 
 bool friend_seen = false;
-bool broadcast = true;
-
 const char group_name[] = "tiger";
 
-void onButtonA(MicroBitEvent) { uBit.radio.datagram.send("1"); }
-
-void onButtonB(MicroBitEvent) { uBit.radio.datagram.send("2"); }
-
-void onButtonAB(MicroBitEvent) {
-  broadcast ^= true;
-  uBit.display.print("!");
-}
-
-void onData(MicroBitEvent) {
-  ManagedString s = uBit.radio.datagram.recv();
-  int rssi = uBit.radio.getRSSI();
-
-  if (s == "1") drawImage(xMark, uBit);
-
-  if (s == "2") drawImage(checkMark, uBit);
-
-  if (s == group_name && rssi < 60) friend_seen = true;
-}
-
 int main() {
+  // Initialize uBit framework and stack
   uBit.init();
 
-  uBit.messageBus.listen(MICROBIT_ID_BUTTON_A, MICROBIT_EVT_ANY, onButtonA);
-  uBit.messageBus.listen(MICROBIT_ID_BUTTON_B, MICROBIT_EVT_ANY, onButtonB);
-  uBit.messageBus.listen(MICROBIT_ID_BUTTON_AB, MICROBIT_EVT_ANY, onButtonAB);
-
+  // Initialize button and randio listeners
+  ButtonManager::listenAllButtons(ButtonManager::proximityHandler);
   uBit.messageBus.listen(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM,
-                         onData);
-
-  uBit.radio.enable();
+                         RadioManager::proximityHandler);
+  // Initialize Radio framework
+  RadioManager::init(7);
 
   while (true) {
-    if (friend_seen) {
-      drawImage(checkMark, uBit);
-      friend_seen = false;
-      uBit.sleep(1000);
-    } else
-      drawImage(xMark, uBit);
+    switch (uBitState) {
+      case ST_GROUP: {
+        uBit.display.printChar('0' + radioGroup);
+        break;
+      }
+      case ST_PROXIMITY: {
+        if (friend_seen) {
+          drawImage(checkMark, uBit);
+          friend_seen = false;
+        } else
+          drawImage(xMark, uBit);
 
-    if (broadcast) uBit.radio.datagram.send(group_name);
+        uBit.radio.datagram.send(group_name);
+        break;
+      }
 
+      default:
+        break;
+    }
     uBit.sleep(1000);
   }
 }
