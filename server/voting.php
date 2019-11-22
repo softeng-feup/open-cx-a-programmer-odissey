@@ -1,14 +1,16 @@
 <?php
     $question = $_GET["question"];
     $db = new PDO('sqlite:votes.db');
-    $stmt = $db->prepare("select * from votes where question = ?");
-    $db_status = $stmt->execute(array($question));
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    if ($db_status) {
-        $votes = $stmt->fetchAll();
-    } else {
-        $stmt = $db->prepare("insert into votes values(?, 0, 0)");
-        $db_status = $stmt->execute(array($question));
+    $stmt = $db->prepare("select * from votes where question = ?");
+    $stmt->execute(array($question));
+    $votes = $stmt->fetchAll();
+
+    if (empty($votes)) {
+        $insert = $db->prepare("insert into votes values(?, 0, 0)");
+        $db_status = $insert->execute(array($question));
     }
 ?>
 
