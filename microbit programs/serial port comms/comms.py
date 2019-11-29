@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import serial
 import serial.tools.list_ports
 
@@ -73,8 +74,8 @@ microbit_port = get_microbit_port()
 print("Send(S) or Receive(R):")
 i = input()
 if i == 'S':
-    write_console_to_console('COM3')
+    write_console_to_console(os.getenv('port', default='COM3'))
 elif i == 'R':
-    read_console_to_file('COM3', 'text.txt')
+    read_console_to_file(os.getenv('port', default='COM3'), 'text.txt')
 else:
     print("Invalid input!")
