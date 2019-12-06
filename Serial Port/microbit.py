@@ -42,7 +42,7 @@ def read_forever():
         print("Port not found")
 
 
-def voting(timeout):
+def voting(timeout, question):
     print("Voting started")
     time_started = time.time()
     microbit_port = get_microbit_port()
@@ -67,7 +67,7 @@ def voting(timeout):
                         elif vote == "N":
                             votes_no += 1
                             print("ID: " + mbid + " voted NO")
-                        requests.get(f'http://localhost:8000/voting.php?vote={vote}')
+                        requests.get(f'http://localhost:8000/count_vote.php?question={question}&vote={vote}')
     else:
         print("Cannot connect to microbit")
         return
@@ -90,6 +90,7 @@ if len(sys.argv) >= 2:
         send_id(sys.argv[2])
     if sys.argv[1] == "voting":
         timeout = 10
-        if len(sys.argv) >= 3:
-            timeout = int(sys.argv[2])
-        voting(timeout)
+        question = sys.argv[2]
+        if len(sys.argv) >= 4:
+            timeout = int(sys.argv[3])
+        voting(timeout, question)
