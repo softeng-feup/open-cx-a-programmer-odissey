@@ -15,7 +15,7 @@ def get_microbit_port():
     for port in serial_ports:
         sep = str(port.description).find(' (')
         port_description = str(port.description)[:sep]
-        if port_description == 'mbed Serial Port':
+        if port_description == 'mbed Serial Port' or port_description == 'USB ACM device':
             return port.device
     return -1
 
