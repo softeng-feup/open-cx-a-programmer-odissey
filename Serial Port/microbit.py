@@ -33,6 +33,8 @@ def read_forever():
             bytes_waiting = mb_connect.inWaiting()
             if bytes_waiting > 0:
                 print(mb_connect.readline().decode("utf-8"), end='')
+    else:
+        print("Port not found")
 
 
 def voting(timeout):
@@ -56,8 +58,10 @@ def voting(timeout):
                         ids_voted.append(mbid)
                         if vote == "Y":
                             votes_yes += 1
+                            print("ID: " + mbid + " voted YES")
                         elif vote == "N":
                             votes_no += 1
+                            print("ID: " + mbid + " voted NO")
     else:
         print("Cannot connect to microbit")
         return
