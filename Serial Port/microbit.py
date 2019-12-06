@@ -18,9 +18,9 @@ def get_microbit_port():
         if port_description == 'mbed Serial Port':
             return port.device
         else:
-            sep = str(port.description).find(' - ')
-            name, port_description = str(port.description)[:sep]
-            print(port_description)
+            sep, port_description = str(port.description).split(' - ')
+            if port_description == 'mbed Serial Port':
+                return port.device
     return -1
 
 
