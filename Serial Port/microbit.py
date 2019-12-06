@@ -19,7 +19,7 @@ def get_microbit_port():
             return port.device
         else:
             sep = str(port.description).find(' - ')
-            port_description = str(port.description)[:sep]
+            name, port_description = str(port.description)[:sep]
             print(port_description)
     return -1
 
