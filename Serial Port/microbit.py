@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import requests
 import sys
 import serial
 import serial.tools.list_ports
@@ -66,6 +67,7 @@ def voting(timeout):
                         elif vote == "N":
                             votes_no += 1
                             print("ID: " + mbid + " voted NO")
+                        requests.get(f'http://localhost:8000/voting.php?vote={vote}')
     else:
         print("Cannot connect to microbit")
         return
