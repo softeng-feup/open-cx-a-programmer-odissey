@@ -28,7 +28,7 @@ Proximity mode is the program's default mode. In this mode the microbit will con
 ![alt text][mbproximity]
 ![alt text][mbproxfound]
 
-If a group of more than 2 people are in range of each other the interest that has the most people in common will be display, as to encourage group discussion of common topics.
+If a group of more than 2 people are in range of each other the interest that has the most people in common will be displayed, as to encourage group discussion of common topics.
 
 ## Voting Mode
 
