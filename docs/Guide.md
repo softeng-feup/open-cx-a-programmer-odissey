@@ -15,7 +15,7 @@
 ## Compiling and Flashing
 The programs in the microbit folder can be compiled manually using the arm gcc compiler but this is not recommended. The recommended way to compile is using [the mbed compiler](https://ide.mbed.com/). To compile using the mbed compiler microbit must be the selected device and then you can simply create a zip of the program and drag it to the online IDE. Upon hitting compile, if the program is successfully compiled, a ".hex" file will be downloaded automatically. 
 
-To flash the microbit with the program the microbit must be connect to the computer by USB and then you can simply copy or drag the file to the microbit device. The microbit will do the rest.
+To flash the microbit with the program, the microbit must be connect to the computer by USB and then you can simply copy or drag the file to the microbit device. The microbit will do the rest.
 
 ## On First Flash
 
