@@ -22,7 +22,7 @@
 
 <body>
 <h1><?= $question ?></h1>
-<p>Yes</p>
-<p>No</p>
+<p>Yes <?= $yes_votes ?></p>
+<p>No <?= $no_votes ?></p>
 </body>
 </html>
