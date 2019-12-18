@@ -31,11 +31,11 @@ Please contact us!
 
 Thank you!
 
-Álvaro Francisco Barbosa Miranda
-Gonçalo Santos Oliveira
-João Filipe Carvalho de Araújo
-Nuno Miguel Fernandes Marques
-Pedro Alexandre Vieites Mendes
+ * Álvaro Francisco Barbosa Miranda
+ * Gonçalo Santos Oliveira
+ * João Filipe Carvalho de Araújo
+ * Nuno Miguel Fernandes Marques
+ * Pedro Alexandre Vieites Mendes
 
 ## Motivation
 Interactions between people in a conference can get easily hampered: conferences are often hosted in an unknown place and the audience comes from all around the world. This means that, most times, it is hard to meet people who have similar interests and network with them without trying to talk to other people and then coming to the conclusion you have nothing in common with them. On the other hand, it is not uncommon to carry several copies of one's CV so as to deliver them to potential employees. Because of these problems, Conference Connect was born, a revolutionary smart badge that locates people with similar interests and connects people with businesses!
