@@ -132,15 +132,14 @@ While not necessary, sometimes it might be useful to explain a few aspects of th
 Use cross-links to the code repository and only embed real fragments of code when strictly needed, since they tend to become outdated very soon.
 
 ---
-## Test TODO
+## Test
 
-There are several ways of documenting testing activities, and quality assurance in general, being the most common: a strategy, a plan, test case specifications, and test checklists.
+We intend to test the following features:
+* Similar interests - by getting various microbits with different interests together and verifying that only the ones with the most similar interests get paired
+* Sending CVs - by verifying that the company has received all the CVsthat were sent using the microbits.
+* Voting - by using several microbits in a room to respond to the quiz and verifying that the results to the poll displayed are the same has the answers inputed.
 
-In this section it is only expected to include the following:
-* test plan describing the list of features to be tested and the testing methods and tools;
-* test case specifications to verify the functionalities, using unit tests and acceptance tests.
- 
-A good practice is to simplify this, avoiding repetitions, and automating the testing actions as much as possible.
+ All of the above tests will be repeated using different number of microbits and different values for the microbits
 
 ---
 ## Configuration and change management
