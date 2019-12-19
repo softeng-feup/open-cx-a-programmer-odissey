@@ -96,9 +96,8 @@ For each user story you should write also the acceptance tests (textually in Ghe
 
 At the end, it is good to add a rough indication of the value of the user story to the customers (e.g. MoSCoW method) and the team should add an estimative of the effort to implemente it, in t-shirt sizes (XS, S, M, L, XL).
 
-### Domain model TODO
-
-A simple UML class diagram with all the key concepts (names, attributes) and relationships involved of the problem domain addressed by your module.
+### Domain model
+![Domain Model](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/DomainModel.png)
 
 ---
 
