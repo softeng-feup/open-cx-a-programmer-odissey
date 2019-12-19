@@ -1,6 +1,10 @@
-# Microbit Guide
+# Conference-Connect
 
 ![alt text][mbsimple]
+
+## Links
+* [Report](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Development-Report.md)
+* [Project Board](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1)
 
 ## Contents
 * [Compiling and Flashing](#Compiling-and-flashing)
@@ -11,8 +15,6 @@
 * [Changing Radio Channels](#Changing-Radio-Channels)
 * [Button Combos](#Button-Combos)
 * [Shutting Down](#Shutting-Down)
-* [Report](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Development-Report.md)
-* [Project Board](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1)
 
 ## Compiling and Flashing
 The programs in the microbit folder can be compiled manually using the arm gcc compiler but this is not recommended. The recommended way to compile is using [the mbed compiler](https://ide.mbed.com/). To compile using the mbed compiler microbit must be the selected device and then you can simply create a zip of the program and drag it to the online IDE. Upon hitting compile, if the program is successfully compiled, a ".hex" file will be downloaded automatically. 
