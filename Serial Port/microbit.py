@@ -10,7 +10,7 @@ import webbrowser
 
 
 microbit_baud_rate = 115200
-survey_base_url = "http://localhost/server/voting.php?"
+survey_base_url = "http://45.137.150.177/ESOF/voting.php?"
 
 
 def get_microbit_port():
@@ -46,7 +46,8 @@ def read_forever():
 
 
 def generate_full_url(question, option1, option2, timeout):
-    survey_url = survey_base_url + "question=" + question + '&' + timeout
+    survey_url = survey_base_url + "question=" + \
+        question + '&' + "timeout=" + str(timeout)
     if option1 != "" and option2 != "":
         survey_url = survey_url + '&' + "option1=" + \
             option1 + '&' + "option2=" + option2
@@ -69,18 +70,19 @@ def voting(timeout, question, option1, option2):
         while (time.time() - time_started) < timeout:
             if mb_connect.inWaiting() > 0:
                 received = mb_connect.readline().decode("utf-8").rstrip()
-                msg, mbid, vote = received.split('_')
-                if msg == 'V':
-                    if mbid not in ids_voted:
-                        ids_voted.append(mbid)
-                        if vote == "Y":
-                            votes_yes += 1
-                            print("ID: " + mbid + " voted YES")
-                        elif vote == "N":
-                            votes_no += 1
-                            print("ID: " + mbid + " voted NO")
-                        requests.get(
-                            f'http://localhost/server/count_vote.php?question={question}&vote={vote}')
+                if received.find(' - ') != -1:
+                    msg, mbid, vote = received.split('_')
+                    if msg == 'V':
+                        if mbid not in ids_voted:
+                            ids_voted.append(mbid)
+                            if vote == "Y":
+                                votes_yes += 1
+                                print("ID: " + mbid + " voted YES")
+                            elif vote == "N":
+                                votes_no += 1
+                                print("ID: " + mbid + " voted NO")
+                            requests.get(
+                                f'http://45.137.150.177/ESOF/count_vote.php?question={question}&vote={vote}')
     else:
         print("Cannot connect to microbit")
         return
@@ -96,7 +98,7 @@ def send_id(id):
         mb_connect.close()
 
 
-requests.get(f'http://localhost/server/count_vote.php?question=cor?&vote=Y')
+requests.get(f'http://45.137.150.177/ESOF/count_vote.php?question=cor?&vote=Y')
 
 if len(sys.argv) >= 2:
     if sys.argv[1] == "read_forever":
