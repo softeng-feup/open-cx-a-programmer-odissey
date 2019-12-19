@@ -31,6 +31,7 @@ Please contact us!
 
 Thank you!
 
+Made by:
  * Álvaro Francisco Barbosa Miranda
  * Gonçalo Santos Oliveira
  * João Filipe Carvalho de Araújo
@@ -47,11 +48,11 @@ Improve interactions between conference goers using the power of technology by o
 This module allows for easy communication between participants in a conference and finding people with similar interests around each of them by using a small and lightweight device. 
 
 ## Requirements
-This module requires each person participating in the conference to use a micro:bit, and also requires some information about the user, such as his personal information, his CV and his interests.
+This module requires each person participating in the conference to use a micro:bit and requires some information about the user, such as his personal information, his CV and his interests.
 
 Start by contextualizing your module, describing the main concepts, terms, roles, scope and boundaries of the application domain addressed by the project.
 
-### Use case diagram
+### Use case diagram Imcomplete?
 ![Use cases](https://user-images.githubusercontent.com/2162852/67559084-2099d280-f710-11e9-9bbb-42d1b8b58b02.png)
 
 Create a use-case diagram in UML with all high-level use cases possibly addressed by your module.
@@ -67,7 +68,7 @@ Briefly describe each use case mentioning the following:
 * **Normal Flow**. Provide a detailed description of the user actions and system responses that will take place during execution of the use case under normal, expected conditions. This dialog sequence will ultimately lead to accomplishing the goal stated in the use case name and description. This is best done as a numbered list of actions performed by the actor, alternating with responses provided by the system. 
 * **Alternative Flows and Exceptions**. Document other, legitimate usage scenarios that can take place within this use case, stating any differences in the sequence of steps that take place. In addition, describe any anticipated error conditions that could occur during execution of the use case, and define how the system is to respond to those conditions. 
 
-### User stories
+### User stories Imcomplete?
 ### Must haves
 * As an attendee, I want to be able to use the badge without having to download an app so that I don't have to reserve space on my phone for it. (Effort: L)
 * As an attendee, I want to easily send my CV to potential employers. (Effort: S)
@@ -95,8 +96,68 @@ For each user story you should write also the acceptance tests (textually in Ghe
 
 At the end, it is good to add a rough indication of the value of the user story to the customers (e.g. MoSCoW method) and the team should add an estimative of the effort to implemente it, in t-shirt sizes (XS, S, M, L, XL).
 
-### Domain model
+### Domain model TODO
 
 A simple UML class diagram with all the key concepts (names, attributes) and relationships involved of the problem domain addressed by your module.
 
+---
 
+## Architecture and Design
+The main focus of our architecture is based on being able to use the micro:bit whithout requiring an application, this is achieved by comunicating with the PC using [serial port](https://github.com/softeng-feup/open-cx-a-programmer-odissey/tree/master/Serial%20Port) on a [server](https://github.com/softeng-feup/open-cx-a-programmer-odissey/tree/master/Microbit%20Programs/server) micro:bit, and by making the connection with [other](https://github.com/softeng-feup/open-cx-a-programmer-odissey/tree/master/Microbit%20Programs/client) micro:bits using the radio.
+
+### Logical architecture TODO
+The purpose of this subsection is to document the high-level logical structure of the code, using a UML diagram with logical packages, without the worry of allocating to components, processes or machines.
+
+It can be beneficial to present the system both in a horizontal or vertical decomposition:
+* horizontal decomposition may define layers and implementation concepts, such as the user interface, business logic and concepts; 
+* vertical decomposition can define a hierarchy of subsystems that cover all layers of implementation.
+
+### Physical architecture
+![Physical Layer](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Physical%20Layer.PNG)
+
+We chose to use C++ while programming the microbit because it's a more lighweight language for the microbit in comparison to python and javascript and the microbit doesn't have much computing power. We also chose to use microbits using serial port with a PC for the servers because it made comunicating with the clients 
+
+### Prototype TODO
+To help on validating all the architectural, design and technological decisions made, we usually implement a vertical prototype, a thin vertical slice of the system.
+
+In this subsection please describe in more detail which, and how, user(s) story(ies) were implemented.
+
+---
+
+## Implementation TODO
+Regular product increments are a good practice of product management. 
+
+While not necessary, sometimes it might be useful to explain a few aspects of the code that have the greatest potential to confuse software engineers about how it works. Since the code should speak by itself, try to keep this section as short and simple as possible.
+
+Use cross-links to the code repository and only embed real fragments of code when strictly needed, since they tend to become outdated very soon.
+
+---
+## Test TODO
+
+There are several ways of documenting testing activities, and quality assurance in general, being the most common: a strategy, a plan, test case specifications, and test checklists.
+
+In this section it is only expected to include the following:
+* test plan describing the list of features to be tested and the testing methods and tools;
+* test case specifications to verify the functionalities, using unit tests and acceptance tests.
+ 
+A good practice is to simplify this, avoiding repetitions, and automating the testing actions as much as possible.
+
+---
+## Configuration and change management
+
+Configuration and change management are key activities to control change to, and maintain the integrity of, a project’s artifacts (code, models, documents).
+
+For the purpose of ESOF, we will use a very simple approach, just to manage feature requests, bug fixes, and improvements, using GitHub issues and following the [GitHub flow](https://guides.github.com/introduction/flow/).
+
+
+---
+
+## Project management
+
+[Board at Github Projects](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1) 
+
+---
+
+## Evolution - contributions to open-cx
+
+There is no app so there is no possible integration
