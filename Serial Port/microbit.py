@@ -70,7 +70,7 @@ def voting(timeout, question, option1, option2):
         while (time.time() - time_started) < timeout:
             if mb_connect.inWaiting() > 0:
                 received = mb_connect.readline().decode("utf-8").rstrip()
-                if received.find(' - ') != -1:
+                if received.find('_') != -1:
                     msg, mbid, vote = received.split('_')
                     if msg == 'V':
                         if mbid not in ids_voted:
