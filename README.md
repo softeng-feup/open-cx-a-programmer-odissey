@@ -81,7 +81,7 @@ The microbit can be reset at anytime by pressing the button located on the rear 
 
 
 
-[mbradio]: mbscreens/mbradiogroup.jpg "Radio Channel"
-[mbproximity]: mbscreens/mbproximity.jpg "No users with common interests found"
-[mbproxfound]: mbscreens/mbproxfound.jpg "Found users with common interests"
-[mbsimple]: mbscreens/mbsimple.jpg "microbit"
+[mbradio]: docs/mbscreens/mbradiogroup.jpg "Radio Channel"
+[mbproximity]: docs/mbscreens/mbproximity.jpg "No users with common interests found"
+[mbproxfound]: docs/mbscreens/mbproxfound.jpg "Found users with common interests"
+[mbsimple]: docs/mbscreens/mbsimple.jpg "microbit"
