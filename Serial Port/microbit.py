@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 
 import os
+import requests
 import sys
 import serial
 import serial.tools.list_ports
 import time
+import webbrowser
+
 
 microbit_baud_rate = 115200
+survey_base_url = "http://localhost/server/voting.php?"
 
 
 def get_microbit_port():
@@ -17,7 +21,7 @@ def get_microbit_port():
         port_description = str(port.description)[:sep]
         if port_description == 'mbed Serial Port':
             return port.device
-        else:
+        if port_description.find(' - ') != -1:
             sep, port_description = str(port.description).split(' - ')
             if port_description == 'mbed Serial Port':
                 return port.device
@@ -41,7 +45,16 @@ def read_forever():
         print("Port not found")
 
 
-def voting(timeout):
+def generate_full_url(question, option1, option2, timeout):
+    survey_url = survey_base_url + "question=" + question + '&' + timeout
+    if option1 != "" and option2 != "":
+        survey_url = survey_url + '&' + "option1=" + \
+            option1 + '&' + "option2=" + option2
+    return survey_url
+
+
+def voting(timeout, question, option1, option2):
+    webbrowser.open(generate_full_url(question, option1, option2, timeout))
     print("Voting started")
     time_started = time.time()
     microbit_port = get_microbit_port()
@@ -66,6 +79,8 @@ def voting(timeout):
                         elif vote == "N":
                             votes_no += 1
                             print("ID: " + mbid + " voted NO")
+                        requests.get(
+                            f'http://localhost/server/count_vote.php?question={question}&vote={vote}')
     else:
         print("Cannot connect to microbit")
         return
@@ -81,6 +96,8 @@ def send_id(id):
         mb_connect.close()
 
 
+requests.get(f'http://localhost/server/count_vote.php?question=cor?&vote=Y')
+
 if len(sys.argv) >= 2:
     if sys.argv[1] == "read_forever":
         read_forever()
@@ -88,6 +105,12 @@ if len(sys.argv) >= 2:
         send_id(sys.argv[2])
     if sys.argv[1] == "voting":
         timeout = 10
-        if len(sys.argv) >= 3:
-            timeout = int(sys.argv[2])
-        voting(timeout)
+        option1 = ""
+        option2 = ""
+        if len(sys.argv) >= 4:
+            question = sys.argv[2]
+            timeout = int(sys.argv[3])
+            if len(sys.argv) >= 6:
+                option1 = '\'' + sys.argv[4] + '\''
+                option2 = '\'' + sys.argv[5] + '\''
+            voting(timeout, question, option1, option2)
