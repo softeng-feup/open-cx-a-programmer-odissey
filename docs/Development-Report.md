@@ -21,7 +21,7 @@ You can find here detailed information about the module, from a high-level visio
 * Test
   * [Automated tests](): Functional tests, integration tests, acceptance tests, as much automated as possible.
 * Change management
-  * [Issues at Github]()
+  * [Issues at Github](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues)
 * Project management
   * [Board at Github Projects](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1) 
 
