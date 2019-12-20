@@ -114,9 +114,9 @@ The main focus of our architecture is based on being able to use the micro:bit w
 We chose to use C++ while programming the microbit because it's a more lighweight language for the microbit in comparison to python and javascript and the microbit doesn't have much computing power. We also chose to use microbits using serial port with a PC for the servers because it made comunicating with the clients 
 
 ### Prototype
-In the first iteration we focused on testing microbits capabilities, eventually choosing to program the microbit using C++ due to the heavy hardware limitations (16mhz single core CPU, 16kb of RAM), for example using python the microbit does not have enough memory to even use the bluetooth module, a blink tests on microbit are also about 20 times faster on C++. 
+In the first iteration we focused on testing microbits capabilities, eventually choosing to program the microbit using C++ due to the heavy hardware limitations (16mhz single core CPU, 16kb of RAM), for example using python the microbit does not have enough memory to even use the bluetooth module, blink tests on microbit are also about 20 times faster on C++. 
 
-After choosing languanges we focused on building a proximity program that would show an icon on screen when a microbit with a hardcoded key was in radio range and tested the microbit's hardware (radio range and interference, computing performace, the possibility of toggling between bluetooth and radio) 
+After choosing languanges we focused on building a proximity program that would show an icon on screen when a microbit with a hardcoded key was in radio range and tested the microbit's hardware (radio range and interference, computing performace, the possibility of toggling between bluetooth and radio. Progress was made but no user story was completed in this iteration. 
 
 ## Implementation TODO
 Regular product increments are a good practice of product management. 
