@@ -18,8 +18,11 @@ You can find here detailed information about the module, from a high-level visio
   * [Logical architecture]()
   * [Prototype](#Prototype)
 * Implementation
-  * [Source code]()
-  * [Issues](): feature requests, bug fixes, improvements.
+  * [Iteration 1](#Iteration-1)
+  * [Iteration 2](#Iteration-2)
+  * [Iteration 3](#Iteration-3)
+  * [Iteration 4](#Iteration-4)
+  * [Iteration 5](#Iteration-5)
 * Test
   * [Acceptance tests](#Acceptance-tests)
 * Change management
@@ -117,16 +120,26 @@ We chose to use C++ while programming the microbit because it's a more lighweigh
 ### Prototype
 In the first iteration we focused on testing microbits capabilities, eventually choosing to program the microbit using C++ due to the heavy hardware limitations (16mhz single core CPU, 16kb of RAM), for example using python the microbit does not have enough memory to even use the bluetooth module, blink tests on microbit are also about 20 times faster on C++. 
 
-After choosing languanges we focused on building a proximity program that would show an icon on screen when a microbit with a hardcoded key was in radio range and tested the microbit's hardware (radio range and interference, computing performace, the possibility of toggling between bluetooth and radio. Progress was made but no user story was completed in this iteration. 
+After choosing languanges we focused testing the microbit's hardware (radio range and interference, computing performace, the possibility of toggling between bluetooth and radio. Progress was made but no user story was completed in this iteration. 
 
-## Implementation TODO
-Regular product increments are a good practice of product management. 
+## Implementation
 
-While not necessary, sometimes it might be useful to explain a few aspects of the code that have the greatest potential to confuse software engineers about how it works. Since the code should speak by itself, try to keep this section as short and simple as possible.
+### Iteration 1
+As we had to wait to have a second microbit available on our first iteration we mostly continued our efforts from the prototype, testing the microbits capabilities.
 
-Use cross-links to the code repository and only embed real fragments of code when strictly needed, since they tend to become outdated very soon.
+### Iteration 2
+On the second interation with two microbits available we coded serveral microbit programs to display images on the LEDs, read and write to the persistent file system, measure radio intensity and a first working proximity program that would display an image on screen when a microbit with a hardcoded interest was in range.
 
----
+### Iteration 3
+On the third iteration we continued working on our proximity program and also started working the voting feature, starting with a microbit program to act as a server and another as a client
+
+### Iteration 4
+On the fourth iteration we reassembled all microbit individual programs into a single client program. Programs were separated to improve compile times and general workflow with the microbit. At this point the programs were mature enough to be integrated together. This single program at this point could read an unique user ID into persistent memory, use proximity mode by default and change to voting mode or radio channel changing mode using key combinations. Aditionally a python script to receive votes was coded and work on a web interface for the votes was nearly completed.
+
+### Iteration 5
+On the fith iteration the voting interface was completed, work started on open-cx integration.
+
+
 ## Tests
 
 Due to the nature of microbit programing automated unit tests are not viable for the microbit programs themselves.
