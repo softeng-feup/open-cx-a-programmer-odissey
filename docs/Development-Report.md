@@ -109,7 +109,11 @@ The main focus of our architecture is based on being able to use the micro:bit w
 ![Physical Layer](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Uml.jpg)
 
 ### Physical architecture
+Deployment Diagram
 ![Physical Layer Deployment](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Physical%20Layer%20Deployment.PNG)
+
+Component Diagram
+![Physical Layer Component](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Physical%20Layer%20Component.PNG)
 
 We chose to use C++ while programming the microbit because it's a more lighweight language for the microbit in comparison to python and javascript and the microbit doesn't have much computing power. We also chose to use microbits using serial port with a PC for the servers because it made comunicating with the clients 
 
