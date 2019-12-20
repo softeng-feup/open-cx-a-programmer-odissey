@@ -129,6 +129,8 @@ Use cross-links to the code repository and only embed real fragments of code whe
 ---
 ## Test
 
+Acceptance test can be found in the users stories on our [project board](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1) 
+
 We intend to test the following features:
 * Similar interests - by getting various microbits with different interests together and verifying that only the ones with the most similar interests get paired
 * Sending CVs - by verifying that the company has received all the CVsthat were sent using the microbits.
