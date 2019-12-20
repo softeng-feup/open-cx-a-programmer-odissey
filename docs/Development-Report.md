@@ -21,7 +21,7 @@ You can find here detailed information about the module, from a high-level visio
   * [Source code]()
   * [Issues](): feature requests, bug fixes, improvements.
 * Test
-  * [Automated tests](): Functional tests, integration tests, acceptance tests, as much automated as possible.
+  * [Acceptance tests](#Acceptance-tests)
 * Change management
   * [Issues at Github](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues)
 * Project management
@@ -127,9 +127,9 @@ While not necessary, sometimes it might be useful to explain a few aspects of th
 Use cross-links to the code repository and only embed real fragments of code when strictly needed, since they tend to become outdated very soon.
 
 ---
-## Test
+## Tests
 
-Acceptance test can be found in the users stories on our [project board](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1) 
+Due to the nature of microbit programing automated unit tests are not viable for the microbit programs themselves.
 
 We intend to test the following features:
 * Similar interests - by getting various microbits with different interests together and verifying that only the ones with the most similar interests get paired
@@ -137,6 +137,10 @@ We intend to test the following features:
 * Voting - by using several microbits in a room to respond to the quiz and verifying that the results to the poll displayed are the same has the answers inputed.
 
  All of the above tests will be repeated using different number of microbits and different values for the microbits
+
+### Acceptance tests
+Acceptance tests can be found in the users stories on our [project board](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1)
+
 
 ---
 ## Configuration and change management
