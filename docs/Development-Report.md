@@ -47,9 +47,6 @@ Interactions between people in a conference can get easily hampered: conferences
 We aim to improve interactions between conference goers using the power of technology by offering them a networking platform where they can find people with similar interests, exchange information and even participate in surveys using a [micro:bit](https://microbit.org) powered smart badge.
 
 ## Requirements
-This module requires each person participating in the conference to use a micro:bit and requires some information about the user, such as his personal information, his CV and his interests.
-
-Start by contextualizing your module, describing the main concepts, terms, roles, scope and boundaries of the application domain addressed by the project.
 
 ### Use case diagram Imcomplete?
 ![Use cases](https://user-images.githubusercontent.com/2162852/67559084-2099d280-f710-11e9-9bbb-42d1b8b58b02.png)
