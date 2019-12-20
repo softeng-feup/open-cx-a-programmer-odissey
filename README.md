@@ -94,9 +94,6 @@ After being flashed the microbit can lose power at any time and will retain all 
 The microbit can be reset at anytime by pressing the button located on the rear of the microbit, this will not cause the microbit to lose any information.
 
 
-
-
-
 [voting]: docs/mbscreens/votingpage.jpg "voting page"
 [mbradio]: docs/mbscreens/mbradiogroup.jpg "Radio Channel"
 [mbproximity]: docs/mbscreens/mbproximity.jpg "No users with common interests found"

@@ -13,9 +13,8 @@ You can find here detailed information about the module, from a high-level visio
   * [UI Mockups](#UI-mockups)
   * [Domain model](#Domain-model)
 * Architecture and Design
-  * [Architectural and design decisions]()
-  * [Technological architecture]()
-  * [Logical architecture]()
+  * [Physical Architecture](#Physical-architecture)
+  * [Logical architecture](#Logical-architecture)
   * [Prototype](#Prototype)
 * Implementation
   * [Iteration 1](#Iteration-1)
@@ -30,7 +29,7 @@ You can find here detailed information about the module, from a high-level visio
 * Project management
   * [Board at Github Projects](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1) 
 
-So far, contributions are exclusively made by the initial team, but we hope to open them to the community, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
+So far, contributions have been exclusively made by the initial team, but are now open to the community, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
 
 Please contact us! 
 
@@ -51,56 +50,42 @@ We aim to improve interactions between conference goers using the power of techn
 
 ## Requirements
 
-### Use case diagram Imcomplete?
+### Use case diagram
 ![Use cases](https://user-images.githubusercontent.com/2162852/67559084-2099d280-f710-11e9-9bbb-42d1b8b58b02.png)
 
-Create a use-case diagram in UML with all high-level use cases possibly addressed by your module.
+Each of these use cases relies on the existence of a Micro:bit device previously configured with the attendee's, lecturer's or company's information.
 
-Give each use case a concise, results-oriented name. Use cases should reflect the tasks the user needs to be able to accomplish using the system. Include an action verb and a noun. 
+### User stories
+This is a listing of all user stories following the MoSCoW method. Each user story includes a link to the relevant issue (which contains a detailed description of what the user story is about, acceptance tests and who was assigned to it) as well as an estimate of the effort necessary to implement it.
 
-Briefly describe each use case mentioning the following:
+#### Must haves
+* As an attendee, I want to easily exchange contact information with other attendees. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/14) (Effort: M)
+* As an attendee i want to be able to retrieve a microbit with my registration data. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/20) (Effort: S)
+* As a attendee or lecturer i want to be able to make a registration with my personal information, interests and optionally a CV before getting a microbit. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/8) (Effort: S)
+* As a attendee or lecturer i want to change my microbit radio channel so that i can do, or enter, surveys without interference from other microbit communications. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/19) (Effort: S)
 
-* **Actor**. Name only the actor that will be initiating this use case, i.e. a person or other entity external to the software system being specified who interacts with the system and performs use cases to accomplish tasks. 
-* **Description**. Provide a brief description of the reason for and outcome of this use case, or a high-level description of the sequence of actions and the outcome of executing the use case. 
-* **Preconditions and Postconditions**. Include any activities that must take place, or any conditions that must be true, before the use case can be started (preconditions) and postconditions. Describe also the state of the system at the conclusion of the use case execution (postconditions). 
+#### Should haves
+* As an attendee, I want my badge to notify me every time someone with similar interests to mine is near me so that I can have an easier time networking. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/17)
+* As a lecturer, I want to survey my audience so that I can easily collect relevant information to my area or important to me. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/18)
+* As a business, I want to know who is interested in my activities as well as information on who is looking for a job with me. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/11)
 
-* **Normal Flow**. Provide a detailed description of the user actions and system responses that will take place during execution of the use case under normal, expected conditions. This dialog sequence will ultimately lead to accomplishing the goal stated in the use case name and description. This is best done as a numbered list of actions performed by the actor, alternating with responses provided by the system. 
-* **Alternative Flows and Exceptions**. Document other, legitimate usage scenarios that can take place within this use case, stating any differences in the sequence of steps that take place. In addition, describe any anticipated error conditions that could occur during execution of the use case, and define how the system is to respond to those conditions. 
+#### Could haves
+* As an attendee, I want to easily send my CV to potential employers. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/12) (Effort: M)
+* As an attendee, I want to easily send my CV to potential employers. As an employer i want to retrieve all CVs received on my microbit. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/12)
+* As an attendee, I want to easily exchange contact information with other attendees. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/14)
+* As a business, I want to know who is interested in my activities as well as information on who is looking for a job with me. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/11)
+* As an attendee as i return my microbit i want to receive an e-mail for every person that shared their information with me. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/21)
+* As an attendee, i want to use an optional app on my phone to retrieve the contact information, CVs and any other information in my microbit in realtime. [View issue](https://github.com/softeng-feup/open-cx-a-programmer-odissey/issues/10)
 
-### User stories Imcomplete?
-### Must haves
-* As an attendee, I want to be able to use the badge without having to download an app so that I don't have to reserve space on my phone for it. (Effort: L)
-* As an attendee, I want to easily send my CV to potential employers. (Effort: S)
-* As an attendee, I want to easily exchange contact information with other attendees. (Effort: S)
+With these user stories, the map looks like this:
 
-### Should haves
-* As an attendee, I want my badge to notify me every time someone with similar interests to mine is near me so that I can have an easier time networking.
-* As a lecturer, I want to survey my audience so that I can easily collect relevant information to my area or important to me.
-* As a business, I want to know who is interested in my activities as well as information on who is looking for a job with me.
+![Use cases](https://raw.githubusercontent.com/softeng-feup/open-cx-a-programmer-odissey/f2a3f3e654464fdc5de0e3122b9de8a96b0e25eb/docs/user_story_map.png)
 
-
-This section will contain the requirements of the product described as **user stories**, organized in a global **user story map** with **user roles** or **themes**.
-
-For each theme, or role, you may add a small description here. User stories should be detailed in the tool you decided to use for project management (e.g. trello or github projects).
-
-A user story is a description of desired functionality told from the perspective of the user or customer. A starting template for the description of a user story is 
-
-*As a < user role >, I want < goal > so that < reason >.*
-
-You add more details after, but the shorter and complete, the better. In order to decide if the user story is good, please follow the INVEST guidelines.
-
-After the user story text, you should add a draft of the corresponding user interfaces, a simple mockups or drafts, if applicable.
-
-For each user story you should write also the acceptance tests (textually in Gherkin), ie, a description of situations that will help to confirm that the system satisfies the requirements addressed in the user story.
-
-At the end, it is good to add a rough indication of the value of the user story to the customers (e.g. MoSCoW method) and the team should add an estimative of the effort to implemente it, in t-shirt sizes (XS, S, M, L, XL).
 ### UI Mockups
-UI Mockups and a usage guide can be found on the [project readme](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/README.md) .
+UI Mockups and a usage guide can be found on the [project readme](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/README.md).
 
 ### Domain model
 ![Domain Model](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/DomainModel.png)
-
----
 
 ## Architecture and Design
 The main focus of our architecture is based on being able to use the micro:bit whithout requiring an application, this is achieved by comunicating with the PC using [serial port](https://github.com/softeng-feup/open-cx-a-programmer-odissey/tree/master/Serial%20Port) on a [server](https://github.com/softeng-feup/open-cx-a-programmer-odissey/tree/master/Microbit%20Programs/server) micro:bit, and by making the connection with [other](https://github.com/softeng-feup/open-cx-a-programmer-odissey/tree/master/Microbit%20Programs/client) micro:bits using the radio.
@@ -109,10 +94,10 @@ The main focus of our architecture is based on being able to use the micro:bit w
 ![Physical Layer](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Uml.jpg)
 
 ### Physical architecture
-Deployment Diagram
+#### Deployment Diagram
 ![Physical Layer Deployment](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Physical%20Layer%20Deployment.PNG)
 
-Component Diagram
+#### Component Diagram
 ![Physical Layer Component](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Physical%20Layer%20Component.PNG)
 
 We chose to use C++ while programming the microbit because it's a more lighweight language for the microbit in comparison to python and javascript and the microbit doesn't have much computing power. We also chose to use microbits using serial port with a PC for the servers because it made comunicating with the clients 
@@ -139,9 +124,7 @@ On the fourth iteration we reassembled all microbit individual programs into a s
 ### Iteration 5
 On the fith iteration the voting interface was completed, work started on open-cx integration.
 
-
 ## Tests
-
 Due to the nature of microbit programing automated unit tests are not viable for the microbit programs themselves.
 
 We intend to test the following features:
@@ -154,22 +137,13 @@ We intend to test the following features:
 ### Acceptance tests
 Acceptance tests can be found in the users stories on our [project board](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1)
 
-
----
 ## Configuration and change management
-
 Configuration and change management are key activities to control change to, and maintain the integrity of, a project’s artifacts (code, models, documents).
 
 For the purpose of ESOF, we will use a very simple approach, just to manage feature requests, bug fixes, and improvements, using GitHub issues and following the [GitHub flow](https://guides.github.com/introduction/flow/).
 
-
----
-
 ## Project management
-
-[Board at Github Projects](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1) 
-
----
+[Board at Github Projects](https://github.com/softeng-feup/open-cx-a-programmer-odissey/projects/1)
 
 ## Evolution - contributions to open-cx
 
