@@ -97,7 +97,7 @@ The microbit can be reset at anytime by pressing the button located on the rear 
 
 
 
-[voting]: docs/mbsceens/votingpage.jpg "voting page"
+[voting]: docs/mbscreens/votingpage.jpg "voting page"
 [mbradio]: docs/mbscreens/mbradiogroup.jpg "Radio Channel"
 [mbproximity]: docs/mbscreens/mbproximity.jpg "No users with common interests found"
 [mbproxfound]: docs/mbscreens/mbproxfound.jpg "Found users with common interests"
