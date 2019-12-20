@@ -10,20 +10,21 @@ import webbrowser
 
 
 microbit_baud_rate = 115200
+microbit_port_description = 'mbed Serial Port'
 survey_base_url = "http://45.137.150.177/ESOF/voting.php?"
 
 
-def get_microbit_port():
+def get_microbit_port(serial_port_description):
     serial_ports = list(serial.tools.list_ports.comports())
 
     for port in serial_ports:
         sep = str(port.description).find(' (')
         port_description = str(port.description)[:sep]
-        if port_description == 'mbed Serial Port':
+        if port_description == serial_port_description:
             return port.device
         if port_description.find(' - ') != -1:
             sep, port_description = str(port.description).split(' - ')
-            if port_description == 'mbed Serial Port':
+            if port_description == serial_port_description:
                 return port.device
     return -1
 
@@ -34,7 +35,7 @@ def connect_to_port(port):
 
 
 def read_forever():
-    microbit_port = get_microbit_port()
+    microbit_port = get_microbit_port(microbit_port_description)
     if microbit_port != -1:
         mb_connect = connect_to_port(microbit_port)
         while True:
@@ -58,7 +59,7 @@ def voting(timeout, question, option1, option2):
     webbrowser.open(generate_full_url(question, option1, option2, timeout))
     print("Voting started")
     time_started = time.time()
-    microbit_port = get_microbit_port()
+    microbit_port = get_microbit_port(microbit_port_description)
     if microbit_port != -1:
         mb_connect = connect_to_port(microbit_port)
         # Store ids of microbits that already voted
@@ -88,10 +89,11 @@ def voting(timeout, question, option1, option2):
         return
 
     print("Voting ended Yes: ", votes_yes, " No: ", votes_no)
+    return votes_yes
 
 
-def send_id(id):
-    microbit_port = get_microbit_port()
+def send_id(port,id):
+    microbit_port = get_microbit_port(port)
     if microbit_port != -1:
         mb_connect = connect_to_port(microbit_port)
         mb_connect.write(str.encode(id + '\n'))
@@ -104,7 +106,7 @@ if len(sys.argv) >= 2:
     if sys.argv[1] == "read_forever":
         read_forever()
     if sys.argv[1] == "send_id" and len(sys.argv) >= 3:
-        send_id(sys.argv[2])
+        send_id(microbit_port_description,sys.argv[2])
     if sys.argv[1] == "voting":
         timeout = 10
         option1 = ""
