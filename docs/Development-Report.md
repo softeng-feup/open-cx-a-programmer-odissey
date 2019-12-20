@@ -10,6 +10,7 @@ You can find here detailed information about the module, from a high-level visio
 * Requirements
   * [Use Case Diagram](#Use-case-diagram)
   * [User stories](#User-stories)
+  * [UI Mockups](#UI-mockups)
   * [Domain model](#Domain-model)
 * Architecture and Design
   * [Architectural and design decisions]()
@@ -95,6 +96,8 @@ After the user story text, you should add a draft of the corresponding user inte
 For each user story you should write also the acceptance tests (textually in Gherkin), ie, a description of situations that will help to confirm that the system satisfies the requirements addressed in the user story.
 
 At the end, it is good to add a rough indication of the value of the user story to the customers (e.g. MoSCoW method) and the team should add an estimative of the effort to implemente it, in t-shirt sizes (XS, S, M, L, XL).
+### UI Mockups
+UI Mockups and a usage guide can be found on the [project readme](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/README.md) .
 
 ### Domain model
 ![Domain Model](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/DomainModel.png)
