@@ -38,6 +38,21 @@ If a group of more than 2 people are in range of each other the interest that ha
 
 The program has a voting mode available, this mode allows users to vote on surveys using button A(yes) and button B(no). To enter voting mode the user must hold button A for a few seconds and then release. At this point the message "Voting" will be displayed on screen and the user is free to cast votes using buttons A and B, the votes will be sent over radio. To return the microbit to proximity mode a user needs to simply click A and B simultaneously.
 
+To make a survey a python script is used. The script, named microbit.py, can be found in the folder Serial Port. To run the script python 3 is needed, as well as modules pySerial and requests. In order to receive votes you will need a microbit connected to a computer with the server microbit program flashed. On windows the [arm mbed serial driver](http://os.mbed.com/media/downloads/drivers/mbedWinSerial_16466.exe) may be needed.
+
+To generate a survey launch the script with arguments: voting "question" timeout "option1" "option2". Example on windows would be: 
+> py -3 microbit.py "my question?" 40 "yes" "no"
+
+To repeat the survey later while retaining the previous run the option arguments are not needed, in this example it would be:
+
+> py -3 microbit.py "my question?" 60
+
+After launching the script the following webpage should appear on screen:
+
+![alt text][voting]
+
+Votes from microbits on the same channel and within range of the server will appear automatically on the page.
+
 ## Sharing Mode
 
 If the user wishes to share information, such as contacts or CV, the user needs to enter sharing mode by holding button B for a few seconds. To receive information the user must simply be in sharing mode. Information is sent be pressing button A while in sharing mode. Due to microbit limitations the information gathered will be provided to the user upon returning the microbit. To return the microbit to proximity mode a user needs to simply click A and B simultaneously.
@@ -82,7 +97,7 @@ The microbit can be reset at anytime by pressing the button located on the rear 
 
 
 
-
+[voting]: docs/mbsceens/votingpage.jpg "voting page"
 [mbradio]: docs/mbscreens/mbradiogroup.jpg "Radio Channel"
 [mbproximity]: docs/mbscreens/mbproximity.jpg "No users with common interests found"
 [mbproxfound]: docs/mbscreens/mbproxfound.jpg "Found users with common interests"
