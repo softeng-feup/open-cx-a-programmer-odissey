@@ -104,12 +104,8 @@ At the end, it is good to add a rough indication of the value of the user story 
 ## Architecture and Design
 The main focus of our architecture is based on being able to use the micro:bit whithout requiring an application, this is achieved by comunicating with the PC using [serial port](https://github.com/softeng-feup/open-cx-a-programmer-odissey/tree/master/Serial%20Port) on a [server](https://github.com/softeng-feup/open-cx-a-programmer-odissey/tree/master/Microbit%20Programs/server) micro:bit, and by making the connection with [other](https://github.com/softeng-feup/open-cx-a-programmer-odissey/tree/master/Microbit%20Programs/client) micro:bits using the radio.
 
-### Logical architecture TODO
-The purpose of this subsection is to document the high-level logical structure of the code, using a UML diagram with logical packages, without the worry of allocating to components, processes or machines.
-
-It can be beneficial to present the system both in a horizontal or vertical decomposition:
-* horizontal decomposition may define layers and implementation concepts, such as the user interface, business logic and concepts; 
-* vertical decomposition can define a hierarchy of subsystems that cover all layers of implementation.
+### Logical architecture
+![Physical Layer](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Uml.jpg)
 
 ### Physical architecture
 ![Physical Layer](https://github.com/softeng-feup/open-cx-a-programmer-odissey/blob/master/docs/Physical%20Layer.PNG)
